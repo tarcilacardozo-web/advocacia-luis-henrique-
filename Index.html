@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Luis Henrique Lemos - Advocacia & Consultoria Jurídica</title>
+    <!-- Fontes Elegant & Modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --azul-marinho: #1A2B4C;
+            --azul-escuro: #0F1B33;
+            --dourado: #C5A059;
+            --dourado-claro: #E5C378;
+            --fundo-claro: #F8F9FA;
+            --texto-escuro: #2C3E50;
+            --texto-suave: #6C7A89;
+            --branco: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--fundo-claro); color: var(--texto-escuro); line-height: 1.6; }
+
+        /* NAVEGAÇÃO / HEADER */
+        header { background-color: var(--azul-marinho); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-bottom: 3px solid var(--dourado); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--branco); font-weight: 700; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: var(--dourado); }
+        .nav-menu { display: flex; list-style: none; gap: 25px; }
+        .nav-menu a { color: var(--branco); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-menu a:hover { color: var(--dourado); }
+
+        /* HERO SECTION */
+        .hero { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-marinho) 100%); color: var(--branco); padding: 80px 20px; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .hero-text h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--dourado); margin-bottom: 15px; line-height: 1.2; }
+        .hero-text h2 { font-size: 1.2rem; font-weight: 300; margin-bottom: 25px; color: #E0E6ED; }
+        .hero-text p { font-size: 1rem; margin-bottom: 30px; color: #B0C0D0; }
+        
+        .hero-img-container { text-align: center; position: relative; }
+        .hero-img-box { display: inline-block; padding: 8px; background: linear-gradient(135deg, var(--dourado), transparent); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        /* Tratamento visual para a foto enviada */
+        .hero-img { width: 100%; max-width: 380px; height: 460px; object-fit: cover; object-position: center 20%; border-radius: 10px; filter: contrast(1.08) brightness(1.02); }
+
+        .btn-cta { display: inline-block; background: linear-gradient(135deg, var(--dourado), var(--dourado-claro)); color: var(--azul-escuro); padding: 15px 35px; border-radius: 5px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(197, 160, 89, 0.6); }
+
+        /* NÚMEROS & RESULTADOS */
+        .stats-section { background-color: var(--branco); padding: 40px 20px; border-bottom: 1px solid #EAEAEA; }
+        .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; }
+        .stat-card h3 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--dourado); font-weight: 700; }
+        .stat-card p { font-size: 0.95rem; color: var(--texto-suave); font-weight: 600; text-transform: uppercase; margin-top: 5px; }
+
+        /* SEÇÃO SOBRE */
+        .section { padding: 70px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-title { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--azul-marinho); text-transform: uppercase; }
+        .section-subtitle { width: 60px; height: 3px; background-color: var(--dourado); margin: 15px auto 0; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .about-text p { margin-bottom: 15px; color: var(--texto-escuro); text-align: justify; }
+        .badge-experience { display: inline-flex; align-items: center; gap: 15px; background: #F0F4F8; padding: 15px 25px; border-left: 4px solid var(--dourado); border-radius: 4px; margin-top: 15px; }
+        .badge-experience i { font-size: 2rem; color: var(--azul-marinho); }
+
+        /* ÁREAS DE ATUAÇÃO */
+        .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .area-card { background: var(--branco); padding: 30px; border-radius: 8px; border-top: 4px solid var(--azul-marinho); box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .area-card:hover { transform: translateY(-5px); border-top-color: var(--dourado); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .area-icon { font-size: 2.2rem; color: var(--dourado); margin-bottom: 20px; }
+        .area-card h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--azul-marinho); margin-bottom: 12px; }
+        .area-card p { font-size: 0.9rem; color: var(--texto-suave); }
+
+        /* DIFERENCIAIS */
+        .differentials-section { background-color: var(--azul-marinho); color: var(--branco); }
+        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .diff-card { text-align: center; padding: 20px; }
+        .diff-card i { font-size: 2.5rem; color: var(--dourado); margin-bottom: 15px; }
+        .diff-card h4 { font-size: 1.1rem; margin-bottom: 10px; font-family: 'Cinzel', serif; }
+        .diff-card p { font-size: 0.88rem; color: #C0D0E0; }
+
+        /* FORMULÁRIO DE CONTATO */
+        .contact-section { background: var(--branco); }
+        .contact-container { max-width: 800px; margin: 0 auto; background: var(--fundo-claro); padding: 40px; border-radius: 12px; border: 1px solid #E0E0E0; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--azul-marinho); font-size: 0.9rem; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #CCC; border-radius: 6px; font-size: 0.95rem; background-color: var(--branco); }
+        .form-control:focus { outline: none; border-color: var(--dourado); }
+        
+        .btn-whatsapp { width: 100%; background: linear-gradient(135deg, #25D366, #128C7E); color: var(--branco); border: none; padding: 16px; font-size: 1.05rem; font-weight: 700; border-radius: 6px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
+        .btn-whatsapp:hover { background: linear-gradient(135deg, #20BA5A, #0E7065); }
+
+        /* RODAPÉ */
+        footer { background-color: var(--azul-escuro); color: #8090A0; text-align: center; padding: 30px 20px; border-top: 1px solid #203045; font-size: 0.85rem; }
+        footer p { margin-bottom: 5px; }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .hero-container, .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2rem; }
+            .nav-menu { display: none; } /* Pode ser adaptado para menu mobile no futuro */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVEGAÇÃO -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Dr. Luis Henrique <span>Lemos</span></a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">O Advogado</a></li>
+                <li><a href="#atuacao">Áreas de Atuação</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (INÍCIO) -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Excelência Jurídica & Defesa Estratégica dos Seus Direitos</h1>
+                <h2>Mais de 20 anos de atuação especializada em Direito Trabalhista, Previdenciário e Saúde.</h2>
+                <p>Atendimento humanizado, agilidade processual e forte conhecimento corporativo em grandes fundos de previdência.</p>
+                <a href="#contato" class="btn-cta"><i class="fab fa-whatsapp"></i> Agendar Consulta Jurídica</a>
+            </div>
+            <div class="hero-img-container">
+                <div class="hero-img-box">
+                    <!-- Foto otimizada e ajustada diretamente por código -->
+                    <img src="https://i.imgur.com/84cTspb.jpg" alt="Dr. Luis Henrique Lemos" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS & NÚMEROS -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>+20 Anos</h3>
+                <p>De Experiência Jurídica</p>
+            </div>
+            <div class="stat-card">
+                <h3>94%</h3>
+                <p>Taxa de Sucesso em Ações</p>
+            </div>
+            <div class="stat-card">
+                <h3>+1.500</h3>
+                <p>Casos Concluídos</p>
+            </div>
+            <div class="stat-card">
+                <h3>+15 Anos</h3>
+                <p>Em Previdência Fechada</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE O ADVOGADO -->
+    <section class="section" id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre o Advogado</h2>
+                <div class="section-subtitle"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Com mais de duas décadas de trajetória sólida no Direito, o <strong>Dr. Luis Henrique Lemos</strong> pauta a sua atuação na defesa rigorosa e técnica dos interesses dos seus clientes.</p>
+                    <p>Sua bagagem profissional inclui mais de 15 anos de atuação direta na gestão de fundos de previdência complementar (privada), o que confere ao seu escritório uma visão estratégica diferenciada em cálculos complexos, reajustes de aposentadorias e garantias de benefícios.</p>
+                    <p>Na área da <strong>Saúde</strong>, possui vasto histórico de êxito na liberação de tratamentos de alto custo, cirurgias e medicamentos negados por planos de saúde e pelo SUS.</p>
+                    
+                    <div class="badge-experience">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <strong>Compromisso Ético e Rigor Técnico</strong>
+                            <p style="font-size:0.85rem; color:#555; margin:0;">Atuação completa no âmbito cível, trabalhista e regulatório.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="differentials-section" style="padding: 30px; border-radius: 10px;">
+                    <h3 style="color:var(--dourado); font-family:'Cinzel',serif; margin-bottom:15px;">Foco na Resolução Eficiente</h3>
+                    <p style="font-size:0.95rem; color:#D0E0F0;">Cada caso é analisado de forma minuciosa para garantir soluções céleres, priorizando sempre a via que traz o maior benefício e tranquilidade ao cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="section" id="atuacao" style="background-color: #F0F4F8;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Especialidades e Atuação</h2>
+                <div class="section-subtitle"></div>
+            </div>
+            <div class="areas-grid">
+                <!-- Saúde -->
+                <div class="area-card">
+                    <div class="area-icon"><i class="fas fa-notes-medical"></i></div>
+                    <h3>Direito da Saúde</h3>
+                    <p>Ações contra negativas de planos de saúde, cobertura de cirurgias, exames de alta complexidade, internações e fornecimento de remédios de alto custo.</p>
+                </div>
+                <!-- Previdenciário -->
+                <div class="area-card">
+                    <div class="area-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Direito Previdenciário</h3>
+                    <p>Aposentadorias, planejamento previdenciário, revisão de benefícios e atuação em fundos de previdência privada fechada.</p>
+                </div>
+                <!-- Trabalhista -->
+                <div class="area-card">
+                    <div class="area-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Direito Trabalhista</h3>
+                    <p>Defesa dos direitos do trabalhador e consultoria empresarial preventiva. Rescisões, horas extras, equiparação salarial e acidentes de trabalho.</p>
+                </div>
+                <!-- Cível & Consumidor -->
+                <div class="area-card">
+                    <div class="area-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Direito Cível & Consumidor</h3>
+                    <p>Contratos, indenizações por danos morais e materiais, litígios imobiliários e resolução de conflitos de consumo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section differentials-section" id="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color:var(--branco);">Por Que Escolher Nosso Escritório?</h2>
+                <div class="section-subtitle"></div>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Atendimento Personalizado</h4>
+                    <p>Contato direto com o advogado especialista do início ao fim do processo.</p>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Experiência Corporativa</h4>
+                    <p>Domínio técnico de grandes estruturas previdenciárias para defesas mais robustas.</p>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Agilidade nas Medidas Urgentes</h4>
+                    <p>Atuação com pedidos liminares para casos de saúde que não podem esperar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO DIRETO PARA O WHATSAPP -->
+    <section class="section contact-section" id="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fale com o Dr. Luis Henrique</h2>
+                <p style="color:var(--texto-suave); margin-top:5px;">Preencha os dados abaixo para iniciar o seu atendimento via WhatsApp.</p>
+                <div class="section-subtitle"></div>
+            </div>
+
+            <div class="contact-container">
+                <form id="formAdvocacia" onsubmit="enviarWhatsApp(event)">
+                    <div class="form-group">
+                        <label for="nome">Seu Nome Completo *</label>
+                        <input type="text" id="nome" class="form-control" placeholder="Ex: Maria Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Área do seu Problema *</label>
+                        <select id="area" class="form-control" required>
+                            <option value="">Selecione a área jurídico...</option>
+                            <option value="Direito da Saúde (Planos / Medicamentos)">Direito da Saúde (Planos / Medicamentos)</option>
+                            <option value="Direito Previdenciário (Aposentadoria / Pensão)">Direito Previdenciário (Aposentadoria / Pensão)</option>
+                            <option value="Previdência Privada">Previdência Privada</option>
+                            <option value="Direito Trabalhista">Direito Trabalhista</option>
+                            <option value="Direito Cível ou Consumidor">Direito Cível ou Consumidor</option>
+                            <option value="Outro Assunto">Outro Assunto</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgencia">Grau de Urgência *</label>
+                        <select id="urgencia" class="form-control" required>
+                            <option value="Normal">Normal (Consulta de rotina)</option>
+                            <option value="Alta (Prazo em andamento)">Alta (Prazo em andamento)</option>
+                            <option value="MUITO URGENTE (Saúde / Risco de Vida)">MUITO URGENTE (Saúde / Risco de Vida)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="relato">Relate Resumidamente a sua Situação *</label>
+                        <textarea id="relato" class="form-control" rows="4" placeholder="Descreva o que aconteceu para que possamos analisar..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i> Iniciar Consulta no WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <p><strong>Dr. Luis Henrique Lemos - Advocacia & Consultoria Jurídica</strong></p>
+            <p>Inscrito na Ordem dos Advogados do Brasil (OAB) | Todos os direitos reservados © 2026</p>
+            <p style="font-size:0.75rem; margin-top:10px; color:#506070;">Aviso: As informações deste site têm caráter meramente informativo e não substituem uma consulta jurídica formal.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DO FORMULÁRIO -->
+    <script>
+        function enviarWhatsApp(e) {
+            e.preventDefault();
+
+            // COLOQUE O NÚMERO DE WHATSAPP REAL DO DOUTOR AQUI (com DDD e 55 na frente)
+            const numeroTel = "5521998994147; 
+
+            const nome = document.getElementById('nome').value;
+            const area = document.getElementById('area').value;
+            const urgencia = document.getElementById('urgencia').value;
+            const relato = document.getElementById('relato').value;
+
+            let mensagem = `*CONSULTA JURÍDICA - VIA SITE* ⚖️\n\n`;
+            mensagem += `👤 *Cliente:* ${nome}\n`;
+            mensagem += `📂 *Área:* ${area}\n`;
+            mensagem += `🚨 *Urgência:* ${urgencia}\n\n`;
+            mensagem += `📝 *Relato do Caso:*\n"${relato}"\n\n`;
+            mensagem += `_Mensagem enviada através do site portfólio._`;
+
+            const url = `https://api.whatsapp.com/send?phone=${numeroTel}&text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
